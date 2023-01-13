@@ -45,9 +45,6 @@ export function updateTreasure(delta, speedScale){
     document.querySelectorAll("[data-treasure]").forEach(treasure=>{
         incrementCustom(treasure, "--left", delta * speedScale * SPEED * -1)
 
-
-        console.log("5")
-
         if(getCustom(treasure,"--left") <= -100){
             treasure.remove()
         }

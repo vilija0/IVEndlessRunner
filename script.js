@@ -13,6 +13,8 @@ const startScreenElem = document.querySelector("[data-start-screen-one]")
 const title = document.querySelector('[data-title]')
 const gameScreen = document.querySelector('[data-first-time]')
 const totalScore = document.querySelector('[data-total-score]')
+const treasure = document.querySelector("[data-treasure]")
+const treaseteScore = document.querySelector("[data-treasete-score]")
 
 
 setPixelToWorldScale()
@@ -21,11 +23,11 @@ window.addEventListener("resize", setPixelToWorldScale)
 
 startScreenElem.addEventListener("click", handleStart, { once: true })
 
+let number = 0
 let lastTime
 let speedScale
 let score
-let life = 0
-let prethodni = 0
+
 function update(time) {
   if (lastTime == null) {
     lastTime = time
@@ -83,11 +85,14 @@ export function handleStart() {
   lastTime = null
   speedScale = 1
   score = 0
+  number = 0
   setupGround()
   setupDino()
   setupFire()
   startAudio()
+  treasureNull()
   title.textContent='IV ENDLESS RUNNER'
+  treaseteScore.classList.remove('hide')
   scoreElem.classList.remove('hide')
   totalScore.classList.add('hide')
   gameScreen.classList.remove("hide")
@@ -95,7 +100,10 @@ export function handleStart() {
   window.requestAnimationFrame(update)
 }
 
-let number = 0
+function treasureNull(){
+  document.querySelector("[data-treasete-score]").innerText = `${number}`
+}
+
 function scoreIncrement(){
   number++;
   let treasure = document.querySelector("[data-treasure]")
@@ -108,15 +116,13 @@ function scoreIncrement(){
 function handleLose() {
   setHumanLose()
   setTimeout(() => {
-    const treasure = document.querySelector("[data-treasure]")
     //game over
-    life=0
-    prethodni=0
     stopAudio()
     title.textContent='GAME OVER'
     if(treasure){
       treasure.classList.add('hide')
     }
+    treaseteScore.classList.add('hide')
     scoreElem.classList.add('hide')
     totalScore.classList.remove('hide')
     totalScore.classList.add('index')
