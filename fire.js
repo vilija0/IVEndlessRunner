@@ -8,7 +8,7 @@ const SPEED = 0.035
 const FIRE_INTERVAL_MIN = 800
 const FIRE_INTERVAL_MAX = 2000
 const worldElem = document.querySelector("[data-world]")
-const treasure = document.querySelector("[data-treasure]")
+
 
 
 let nextFire
@@ -45,7 +45,6 @@ export function updateTreasure(delta, speedScale){
     document.querySelectorAll("[data-treasure]").forEach(treasure=>{
         incrementCustom(treasure, "--left", delta * speedScale * SPEED * -1)
 
-        //napisati funkcionalnost kada se elementi sudare, kovceg sa covekom
 
         console.log("5")
 

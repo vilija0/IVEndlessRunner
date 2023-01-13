@@ -13,7 +13,6 @@ const startScreenElem = document.querySelector("[data-start-screen-one]")
 const title = document.querySelector('[data-title]')
 const gameScreen = document.querySelector('[data-first-time]')
 const totalScore = document.querySelector('[data-total-score]')
-const upimage = document.querySelector('.upimage')
 
 
 setPixelToWorldScale()
@@ -96,30 +95,33 @@ export function handleStart() {
   window.requestAnimationFrame(update)
 }
 
+let number = 0
 function scoreIncrement(){
+  number++;
+  let treasure = document.querySelector("[data-treasure]")
 
-  var treasure = document.querySelector("[data-treasure]")
-  var treasureScore = document.querySelector("[data-treasete-score]")
-  console.log(treasureScore.innerHTML)
-  
-  treasureScore.innerHTML = treasureScore.innerHTML+1
-  
+  document.querySelector("[data-treasete-score]").innerText = `${number}`
   treasure.classList.add('hide')
   
-
 }
 
 function handleLose() {
   setHumanLose()
   setTimeout(() => {
+    const treasure = document.querySelector("[data-treasure]")
     //game over
     life=0
     prethodni=0
     stopAudio()
     title.textContent='GAME OVER'
+    if(treasure){
+      treasure.classList.add('hide')
+    }
     scoreElem.classList.add('hide')
     totalScore.classList.remove('hide')
-    totalScore.textContent = `Total Score: ${Math.round(score)}`
+    totalScore.classList.add('index')
+    totalScore.innerHTML = `Total Score: ${Math.round(score)}
+                              <p>Total treasure: ${number} </p>`
     startScreenElem.addEventListener("click", handleStart, { once: true })
     startScreenElem.classList.remove("hide")
   }, 200)

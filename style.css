@@ -130,28 +130,6 @@ body {
     margin-bottom: 2%;
 }
 
-/* .treasure{
-
-} */
-
-/* 
-.box{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateY(100%);
-    animation: box 0.3s ease-in;
+.index{
+    z-index: 99;
 }
-
-@keyframes box{
-    from{
-        transform: translateY(-100%);
-    }
-    to{
-        transform: 
-        translateY(100%);
-    }
-} */
