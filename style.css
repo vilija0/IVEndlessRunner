@@ -1,0 +1,157 @@
+@import url('https://fonts.cdnfonts.com/css/crazy');
+@import url('https://fonts.cdnfonts.com/css/evil-empire');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #508582;
+}
+
+.world {
+    overflow: hidden;
+    position: relative;
+}
+
+.score {
+    position: absolute;
+    font-size: 7vmin;
+    right: 1vmin;
+    top: 1vmin;
+}
+
+.treasure-score{
+    position: absolute;
+    font-size: 7vmin;
+    right: 1vmin;
+    top: 8vmin;
+}
+
+.start-screen {
+    position: relative;
+    font-size: 3vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    text-align: center;
+    font-family: 'Evil Empire', sans-serif;
+    position: absolute;
+    font-size: 7vmin;
+    color: #021a18;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.totalscore {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    font-size: 4vmin;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start-screen-one {
+    font-family: 'Crazy', sans-serif;
+    cursor: pointer;
+    position: absolute;
+    font-size: 5vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start-screen-one:hover {
+    font-size: 360%;
+}
+
+.background {
+    --left: 0;
+    width: 100%;
+    left: (calc(var(--left) * 1%));
+}
+
+.hide {
+    display: none;
+}
+
+.ground {
+    --left: 0;
+    position: absolute;
+    width: 300%;
+    bottom: 0;
+    left: calc(var(--left) * 1%)
+}
+
+.human {
+    --bottom: 0;
+    position: absolute;
+    left: 5%;
+    margin-bottom: 5%;
+    height: 24%;
+    bottom: calc(var(--bottom) * 1%);
+}
+
+.upimage{
+    position: absolute;
+    top: 67%;
+    left: 20%;
+    margin-bottom: 5%;
+    height: 24%;
+}
+
+.fire {
+    position: absolute;
+    left: calc(var(--left) * 1%);
+    height: 20%;
+    bottom: 0;
+    margin-bottom: 2%;
+}
+
+.treasure{
+    position: absolute;
+    left: calc(var(--left) * 1%);
+    height: 15%;
+    bottom: 0;
+    margin-bottom: 2%;
+}
+
+/* .treasure{
+
+} */
+
+/* 
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateY(100%);
+    animation: box 0.3s ease-in;
+}
+
+@keyframes box{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: 
+        translateY(100%);
+    }
+} */
