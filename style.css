@@ -82,7 +82,24 @@ body {
 .background {
     --left: 0;
     width: 100%;
-    left: (calc(var(--left) * 1%));
+    position: absolute;
+    left: calc(var(--left) * 1%)
+}
+
+.background2{
+    --left: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: calc(var(--left) * 1%)
+}
+
+#container{
+    position: relative;
+}
+
+#index{
+    z-index: 99;
 }
 
 .hide {
@@ -120,6 +137,7 @@ body {
     height: 20%;
     bottom: 0;
     margin-bottom: 2%;
+    z-index: 99;
 }
 
 .treasure{
@@ -128,8 +146,9 @@ body {
     height: 15%;
     bottom: 0;
     margin-bottom: 2%;
+    z-index: 99;
 }
 
 .index{
-    z-index: 99;
+    z-index: 999;
 }

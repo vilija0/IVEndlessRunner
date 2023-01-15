@@ -1,4 +1,5 @@
 import { updateGround, setupGround } from "./ground.js"
+import { updateBackground, setupBackground, updateBackgroundSame} from "./background.js"
 import { updateHuman, setupDino, getHumanRect, setHumanLose } from "./human.js"
 import { updateFire, setupFire, getFireRects, updateTreasure, getTreasereRects } from "./fire.js"
 import { startAudio, stopAudio } from "./audio.js"
@@ -35,7 +36,8 @@ function update(time) {
     return
   }
   const delta = time - lastTime
-
+  updateBackground(delta, speedScale)
+  updateBackgroundSame(delta, speedScale)
   updateGround(delta, speedScale)
   updateHuman(delta, speedScale)
   updateFire(delta, speedScale)
@@ -86,6 +88,7 @@ export function handleStart() {
   speedScale = 1
   score = 0
   number = 0
+  setupBackground()
   setupGround()
   setupDino()
   setupFire()
